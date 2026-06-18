@@ -9,6 +9,10 @@ class AddProductModel extends AddProductEntity {
     required super.isFeatured,
     required super.image,
     required super.imageUrl,
+    required super.expirationsMonths,
+    required super.isOrganic,
+    required super.numberOfCalories,
+    required super.unitAmount,
   });
 
   Map<String, dynamic> toMap() {
@@ -19,6 +23,10 @@ class AddProductModel extends AddProductEntity {
       'productPrice': productPrice,
       'isFeatured': isFeatured,
       'imageUrl': imageUrl,
+      'expirationsMonths' : expirationsMonths,
+      'isOrganic' : isOrganic,
+      'numberOfCalories' : numberOfCalories,
+      'unitAmount' : unitAmount,
     };
   }
 
@@ -33,6 +41,10 @@ class AddProductModel extends AddProductEntity {
       isFeatured: productEntity.isFeatured,
       image: productEntity.image,
       imageUrl: productEntity.imageUrl,
+      expirationsMonths: productEntity.expirationsMonths,
+      isOrganic: productEntity.isOrganic,
+      numberOfCalories: productEntity.numberOfCalories,
+      unitAmount: productEntity.unitAmount,
     );
   }
 }
