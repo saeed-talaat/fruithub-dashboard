@@ -35,10 +35,10 @@ class SupabaseStorgeService implements StorgeServices {
     String fileName = b.basename(file.path);
     String extensionName = b.extension(file.path);
      await _supabase.client.storage
-        .from(kImageBucket)
+        .from(imagesBucket)
         .upload('$path/$fileName.$extensionName', file);
     String publicUrl = _supabase.client.storage
-        .from(kImageBucket)
+        .from(imagesBucket)
         .getPublicUrl('$path/$fileName.$extensionName');
     return publicUrl;    
   }

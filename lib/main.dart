@@ -1,6 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:fruits_hub_dashboard/constants.dart';
 import 'package:fruits_hub_dashboard/core/helper_functions.dart/on_generate_routes.dart';
@@ -13,8 +14,10 @@ import 'package:fruits_hub_dashboard/generated/l10n.dart';
 
 void main() async {
   Bloc.observer = CustomBlocObserver();
+  await dotenv.load(fileName: ".env");
  await SupabaseStorgeService.initSupabase();
- await SupabaseStorgeService.createBuckets(kImageBucket);
+
+ await SupabaseStorgeService.createBuckets(imagesBucket);
   WidgetsFlutterBinding.ensureInitialized();
  
   await Firebase.initializeApp(
