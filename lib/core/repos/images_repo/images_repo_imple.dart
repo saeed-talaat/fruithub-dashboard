@@ -16,11 +16,10 @@ class ImagesRepoImple implements ImagesRepo {
     required File imageFile,
   }) async {
     try {
-      // String imageUrl = await storgeServices.uploadImage(
-      //   file: imageFile,
-      //   path: BackendEndpoint.images,
-      // );
-      String imageUrl = 'Testing.jpg';
+      String imageUrl = await storgeServices.uploadImage(
+        file: imageFile,
+        path: BackendEndpoint.images,
+      );
       return right(imageUrl);
     } catch (e) {
       log('Exception in ImagesRepoImple.uploadImage : ${e.toString()}');

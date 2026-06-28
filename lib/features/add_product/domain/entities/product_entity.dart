@@ -1,6 +1,6 @@
 import 'dart:io';
 
-class AddProductEntity {
+class ProductEntity {
   final String productName;
   final String productCode;
   final String productDescription;
@@ -15,7 +15,7 @@ class AddProductEntity {
   final num avgRating = 0;
   final num ratingCount = 0;
 
-  AddProductEntity({
+  ProductEntity({
     required this.productName,
     required this.productCode,
     required this.productDescription,
